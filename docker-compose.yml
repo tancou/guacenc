@@ -1,5 +1,6 @@
 services:
   guacenc:
+    image: tancou/guacenc
     build:
       context: .
       dockerfile: Dockerfile
@@ -7,5 +8,5 @@ services:
     volumes:
       - ./record:/record
     environment:
-      - AUTOCONVERT=true
+      - AUTOCONVERT=false
       - AUTOCONVERT_WAIT=60

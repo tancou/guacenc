@@ -7,9 +7,16 @@ RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposi
     apk add guacamole-server
 
 FROM alpine:edge
+ARG USERNAME=user
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
 
 ENV AUTOCONVERT_WAIT=60
 ENV AUTOCONVERT=false
+
+# Create the user
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
 
 COPY --from=guac /usr/bin/guacenc /usr/bin/guacenc
 COPY --from=guac /usr/lib/lib* /usr/lib/
@@ -19,5 +26,7 @@ RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposi
     apk update && \
     apk add cairo-dev ossp-uuid-dev ffmpeg-dev libwebp-dev && \
     chmod +x /usr/bin/convert
+
+USER $USERNAME
 
 CMD ["/bin/ash", "/usr/bin/convert"]

@@ -30,4 +30,4 @@ RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposi
 
 USER $USERNAME
 
-CMD ["/bin/ash", "/usr/bin/convert"]
+CMD ["/usr/bin/convert"]

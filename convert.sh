@@ -1,4 +1,4 @@
-#! /bin/ash
+#!/bin/ash
 
 setup () {
     if [[ -z "$1" ]]; then

@@ -1,5 +1,11 @@
 # Guacenc
 
+Based and forked from bytepen's work. Thanks to him.
+
+Original code source can be found here https://gitlab.com/bytepen/dockerfiles/guacenc
+
+
+
 I've been getting into Apache Guacamole recently, but one thing that I've found a bit annoying is there there doesn't appear to be an easy way to automatically convert recordings into videos.
 I created this docker image to solve that problem.
 

@@ -1,0 +1,11 @@
+services:
+  guacenc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+#    restart: always
+    volumes:
+      - ./record:/record
+    environment:
+      - AUTOCONVERT=true
+      - AUTOCONVERT_WAIT=60

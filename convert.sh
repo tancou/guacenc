@@ -13,7 +13,7 @@ convert () {
     for FILE in ${UNCONVERTED}; do
         SIZE=$(awk -F';' '/size/ {gsub("[[:digit:]].size,[[:digit:]].[[:digit:]],[[:digit:]].","",$1); gsub(",[[:digit:]].","x",$1); print $1}' ${FILE})
         if [[ "${SIZE}" == "0x0" ]]; then SIZE="1280x720"; fi
-        /usr/local/bin/guacenc -s ${SIZE} ${FILE}
+        /usr/bin/guacenc -s ${SIZE} ${FILE}
     done
 }
 

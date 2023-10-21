@@ -20,6 +20,4 @@ RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposi
     apk add cairo-dev ossp-uuid-dev ffmpeg-dev libwebp-dev && \
     chmod +x /usr/bin/convert
 
-USER 1000:1000
-
 CMD ["/bin/ash", "/usr/bin/convert"]

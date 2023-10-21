@@ -18,12 +18,12 @@ convert () {
 }
 
 main () {
-	if [[ "${AUTOCONVERT}" == "true" ]] || [[ ! -z "${1}" ]]; then
+    if [[ "${AUTOCONVERT}" == "true" ]] || [[ ! -z "${1}" ]]; then
         setup $@
-		convert
+        convert
     fi
 
-	if [[ -z "${1}" ]]; then
+    if [[ -z "${1}" ]]; then
         sleep ${AUTOCONVERT_WAIT:-60}
         main $@
     fi

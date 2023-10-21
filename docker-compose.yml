@@ -1,6 +1,6 @@
 services:
   guacenc:
-    image: tancou/guacenc
+    image: tancou/guacenc:latest
     build:
       context: .
       dockerfile: Dockerfile

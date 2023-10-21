@@ -1,6 +1,6 @@
 # Guacenc
 
-Based and forked from bytepen's work. Thanks to him.
+Based and forked on bytepen's work. Thanks to him.
 
 Original code source can be found here https://gitlab.com/bytepen/dockerfiles/guacenc
 
@@ -33,7 +33,7 @@ There are several environmental variables that will configure how this container
 
 
 ```
-docker run -d -v '/recordings/Guacenc':'/record' -e 'AUTOCONVERT'='true' --name guacenc bytepen/guacenc:latest
+docker run -d -v '/recordings/Guacenc':'/record' -e 'AUTOCONVERT'='true' --name guacenc tancou/guacenc:latest
 ```
 
 ## Docker compose

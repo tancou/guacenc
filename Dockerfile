@@ -15,8 +15,8 @@ ENV AUTOCONVERT_WAIT=60
 ENV AUTOCONVERT=false
 
 # Create the user
-RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
+RUN addgroup -g $USER_GID sail \
+    && adduser -G sail -u $USER_UID sail -D
 
 COPY --from=guac /usr/bin/guacenc /usr/bin/guacenc
 COPY --from=guac /usr/lib/lib* /usr/lib/

@@ -16,7 +16,8 @@ ENV AUTOCONVERT=false
 
 # Create the user
 RUN addgroup -g $USER_GID sail \
-    && adduser -G sail -u $USER_UID sail -D
+    && adduser -G sail -u $USER_UID sail -D \
+    && echo "$USERNAME:x:1000:1000:Linux User,,,:/home/$USERNAME:/bin/ash" >> /etc/passwd
 
 COPY --from=guac /usr/bin/guacenc /usr/bin/guacenc
 COPY --from=guac /usr/lib/lib* /usr/lib/

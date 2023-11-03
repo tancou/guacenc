@@ -6,7 +6,7 @@ setup () {
     else
         DIR="$1"
     fi
-    UNCONVERTED=$(find ${DIR} -type f \! -iname "*.m4v" \! -iname "*.nfo" -mmin +3 -exec awk -F';' 'NR==1 && /size/{if (system("test ! -f " FILENAME ".m4v")==0) print FILENAME}' {} \;)
+    UNCONVERTED=$(find ${DIR} -type f \! -iname "*.m4v" \! -iname "*.nfo" -mmin +3 -exec awk -F';' 'NR==1 && /size/{if (system("test ! -f " FILENAME ".m4v")==0) print FILENAME}' {} \; | sort)
 }
 
 convert () {

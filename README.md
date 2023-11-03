@@ -30,6 +30,8 @@ There are several environmental variables that will configure how this container
 | -- | -- | --
 | AUTOCONVERT | "false" | If set to "true", it will automatically convert unconverted videos in `/record`
 | AUTOCONVERT_WAIT | 60 | Seconds to wait between checking for new recordings to convert
+| PARALLEL | "false" | Allow multiple conversions at the same time
+| CONCURRENT_LIMIT | 4 | Number of parallel conversion when `PARALLEL` is `true`
 
 
 ```

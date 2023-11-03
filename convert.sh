@@ -18,8 +18,8 @@ convert () {
         if [[ "${PARALLEL}" == "true" ]]; then
             /usr/bin/guacenc -s ${SIZE} ${FILE} &
 
-            ((count++))
-            if ((count % CONCURRENT_LIMIT == 0)); then
+            count=$((count + 1))
+            if [ $((count % CONCURRENT_LIMIT)) -eq 0 ]; then
                 wait # Attend que tous les jobs en arrière-plan se terminent
             fi
         else
